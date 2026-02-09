@@ -13,8 +13,11 @@ public class Exercise04Loops {
      * @return la somme de 1 + 2 + ... + n
      */
     public int sumUpToN(int n) {
-        throw new UnsupportedOperationException();
-
+      int sum = 0;
+      for (int i=1; i<=n; i++) {
+        sum += i;
+      }
+      return sum;
     }
     
     /**
@@ -23,8 +26,13 @@ public class Exercise04Loops {
      * @return le nombre inversé
      */
     public int reverseNumber(int number) {
-        throw new UnsupportedOperationException();
-
+        int reversed = 0;
+        while (number !=0){
+            int digit = number % 10;
+            reversed = reversed * 10 + digit;
+            number/=10;
+        }
+        return reversed;
     }
     
     /**
@@ -33,8 +41,11 @@ public class Exercise04Loops {
      * @return n! (n factorielle)
      */
     public int factorial(int n) {
-        throw new UnsupportedOperationException();
-
+        int fact = 1;
+        for(int i=2; i<=n;i++){
+            fact = fact *i;
+        }
+        return fact;
     }
     
     /**
@@ -43,7 +54,14 @@ public class Exercise04Loops {
      * @return le nombre de chiffres
      */
     public int countDigits(int number) {
-        throw new UnsupportedOperationException();
+        int count =0;
+        if(number == 0) return 1;
+        
+        while (number != 0){
+            number = number / 10;
+            ++count;
+        }
+        return count;
 
     }
     
@@ -53,7 +71,11 @@ public class Exercise04Loops {
      * @return true si le nombre est premier, false sinon
      */
     public boolean isPrime(int number) {
-        throw new UnsupportedOperationException();
 
+        if (number <= 1) return false;
+
+        for (int i = 2; i < number; i++){
+            if (number % i == 0) return false; 
+        } return true;
     }
 }
