@@ -69,8 +69,7 @@ public class Exercise05ArraysBasics {
         for(int i : array){
             if(i == value){
                 return true;
-            }
-        }return false;
+            }        }return false;
 
     }
 }
