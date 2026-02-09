@@ -43,7 +43,7 @@ public class Exercise03ConditionalStatements {
      * @return la valeur absolue du nombre
      */
     public int absoluteValue(int number) {
-        if(number>=0){
+        if(number > 0){
             return number;
         }else{
             return -number;
