@@ -13,7 +13,11 @@ public class Exercise07ArraysSumAverage {
      * @return la somme de tous les éléments
      */
     public int sum(int[] array) {
-        throw new UnsupportedOperationException();
+        int somme = 0;
+        for(int i : array){
+            somme = somme + i;
+        }
+    return somme;
 
     }
     
@@ -23,7 +27,13 @@ public class Exercise07ArraysSumAverage {
      * @return la moyenne (arrondie à l'entier inférieur)
      */
     public double average(int[] array) {
-        throw new UnsupportedOperationException();
+        double moyenne = 0;
+        int somme = 0;
+        for(int i : array){
+            somme += i;
+            moyenne = somme/array.length;
+        }
+        return moyenne;
 
     }
     
@@ -33,7 +43,19 @@ public class Exercise07ArraysSumAverage {
      * @return le nombre d'éléments supérieurs à la moyenne
      */
     public int countAboveAverage(int[] array) {
-        throw new UnsupportedOperationException();
+        double moyenne = 0;
+        int somme = 0;
+        int count = 0;
+        for(int i : array){
+            somme += i;
+            moyenne = somme/array.length;
+            }
+        for(int j = 0; j < array.length; j++){
+            if(array[j]>moyenne){
+            count++;
+            }
+        }
+        return count;
 
     }
     
@@ -43,7 +65,13 @@ public class Exercise07ArraysSumAverage {
      * @return la somme des nombres pairs
      */
     public int sumEvenNumbers(int[] array) {
-        throw new UnsupportedOperationException();
+       int somme = 0;
+       for(int i : array){
+        if(i % 2 == 0){
+            somme += i;
+        }
+       }
+       return somme;
 
     }
     
@@ -53,7 +81,11 @@ public class Exercise07ArraysSumAverage {
      * @return le produit de tous les éléments
      */
     public int product(int[] array) {
-        throw new UnsupportedOperationException();
+        int produit=1;
 
+        for(int i : array){
+            produit = produit * i;
+        }
+        return produit;
     }
 }
