@@ -13,8 +13,12 @@ public class Exercise08StringManipulation {
      * @return la chaîne inversée
      */
     public String reverseString(String str) {
-        throw new UnsupportedOperationException();
-
+        String reversed ="";
+        
+       for (int i = str.length()-1; i>=0;i--){
+        reversed=reversed + str.charAt(i);
+       }
+       return reversed;
     }
     
     /**
@@ -23,8 +27,12 @@ public class Exercise08StringManipulation {
      * @return true si c'est un palindrome, false sinon
      */
     public boolean isPalindrome(String str) {
-        throw new UnsupportedOperationException();
-
+        for(int i = 0, j=str.length()-1; i < j; i++ , j--){
+            if (str.charAt(i) != str.charAt(j)){
+                return false;
+            }
+        }
+        return true;
     }
     
     /**
@@ -33,7 +41,15 @@ public class Exercise08StringManipulation {
      * @return le nombre de voyelles (a, e, i, o, u)
      */
     public int countVowels(String str) {
-        throw new UnsupportedOperationException();
+        int vowels = 0;
+        str = str.toLowerCase();
+        for (int i= 0 ; i < str.length() ; i++){
+            char c = str.charAt(i);
+            if(c == 'a' || c == 'e'||c == 'i'||c == 'o'||c == 'u'){
+                vowels++;
+            }
+        }
+        return vowels;
 
     }
     
@@ -43,7 +59,8 @@ public class Exercise08StringManipulation {
      * @return le nombre de mots (séparés par des espaces)
      */
     public int countWords(String str) {
-        throw new UnsupportedOperationException();
+        int words = str.split(" ").length;
+        return words;
 
     }
     
@@ -53,7 +70,17 @@ public class Exercise08StringManipulation {
      * @return la chaîne avec chaque mot commençant par une majuscule
      */
     public String capitalizeWords(String str) {
-        throw new UnsupportedOperationException();
+        String myChaine = "";
+        String [] words = str.split(" ");
+        for (String word : words){
+            myChaine += Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase()+" ";
+        }
+       return myChaine.trim();
 
+
+       
+
+       
     }
+    
 }
