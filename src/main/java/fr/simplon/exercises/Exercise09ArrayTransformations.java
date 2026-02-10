@@ -1,5 +1,7 @@
 package fr.simplon.exercises;
 
+import java.util.Arrays;
+
 /**
  * Exercice 9: Tableaux - Transformations
  * 
@@ -13,8 +15,11 @@ public class Exercise09ArrayTransformations {
      * @return un nouveau tableau avec tous les éléments doublés
      */
     public int[] doubleElements(int[] array) {
-        throw new UnsupportedOperationException();
-
+        int [] element = new int [array.length];
+        for(int i =0; i < array.length ; i++){
+           element[i] = array[i]*2;
+        }  
+        return element;
     }
     
     /**
@@ -23,7 +28,22 @@ public class Exercise09ArrayTransformations {
      * @return un nouveau tableau contenant seulement les nombres pairs
      */
     public int[] filterEvenNumbers(int[] array) {
-        throw new UnsupportedOperationException();
+        int newLength = 0;
+        for (int i : array){
+            if(i % 2 == 0){
+                newLength++;
+            }
+        }
+        int [] resultEven = new int [newLength];
+        int index = 0;
+
+        for(int i : array){
+            if(i % 2 == 0 ){
+                resultEven[index++] = i; 
+            }
+        }
+       
+        return resultEven;
 
     }
     
@@ -33,8 +53,11 @@ public class Exercise09ArrayTransformations {
      * @return un nouveau tableau avec les éléments dans l'ordre inverse
      */
     public int[] reverseArray(int[] array) {
-        throw new UnsupportedOperationException();
-
+        int[] reversedTab = new int[array.length];
+        for(int i = 0; i < array.length ; i++){
+            reversedTab[i] = array[array.length -1 -i];
+        }
+        return reversedTab;
     }
     
     /**
@@ -44,8 +67,18 @@ public class Exercise09ArrayTransformations {
      * @return un nouveau tableau contenant d'abord les éléments de array1, puis ceux de array2
      */
     public int[] concatenate(int[] array1, int[] array2) {
-        throw new UnsupportedOperationException();
-
+        int lengthNewTab = array1.length + array2.length;
+        int [] response = new int[lengthNewTab];
+        int position = 0;
+        for(int i : array1){
+            response[position] = i;
+            position++;
+        }
+        for(int i : array2){
+            response[position] = i;
+            position++;
+        }
+        return response;
     }
     
     /**
@@ -56,7 +89,11 @@ public class Exercise09ArrayTransformations {
      * @return un nouveau tableau contenant les éléments de start à end-1
      */
     public int[] slice(int[] array, int start, int end) {
-        throw new UnsupportedOperationException();
-
+              
+        int response [] = new int[end-start];
+        for(int i= start; i < end ; i++){
+            response [i - start] = array[i];
+        }
+        return response;
     }
 }
