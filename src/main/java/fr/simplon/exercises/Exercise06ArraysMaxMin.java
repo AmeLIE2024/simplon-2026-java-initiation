@@ -73,8 +73,8 @@ public class Exercise06ArraysMaxMin {
      * @return la différence max - min
      */
     public int range(int[] array) {
-          int max = array[0];
-          int min = array[0];
+        int max = array[0];
+        int min = array[0];
         for(int i = 0; i < array.length; i++){
             if(array[i] > max)
                 max = array[i];
