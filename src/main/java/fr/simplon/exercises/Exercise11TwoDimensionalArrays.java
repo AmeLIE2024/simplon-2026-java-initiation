@@ -14,8 +14,13 @@ public class Exercise11TwoDimensionalArrays {
      * @return une matrice rows x cols remplie de 0
      */
     public int[][] createMatrix(int rows, int cols) {
-        throw new UnsupportedOperationException();
-
+        int[][] matrix = new int[rows][cols];
+        for(int i=0; i < rows ; i++) {
+            for(int j=0; j < cols ; j++){
+                matrix [i][j] = matrix[0][0] ;
+            }
+        }
+        return matrix;
     }
     
     /**
@@ -24,8 +29,13 @@ public class Exercise11TwoDimensionalArrays {
      * @return la somme de tous les éléments
      */
     public int sumMatrix(int[][] matrix) {
-        throw new UnsupportedOperationException();
-
+        int somme = 0;
+        for(int i=0; i < matrix.length ; i++){
+            for(int j=0; j < matrix[i].length ; j++){
+                somme += matrix[i][j];
+            }
+        }
+        return somme;
     }
     
     /**
@@ -34,8 +44,15 @@ public class Exercise11TwoDimensionalArrays {
      * @return la valeur maximale
      */
     public int findMaxInMatrix(int[][] matrix) {
-        throw new UnsupportedOperationException();
-
+        int max = matrix[0][0];
+        for(int i=0; i < matrix.length ; i++){
+            for(int j=0; j < matrix[i].length ; j++){
+                if(matrix[i][j] > max){
+                max = matrix[i][j];
+                }
+            }              
+        }
+        return max;
     }
     
     /**
@@ -44,8 +61,13 @@ public class Exercise11TwoDimensionalArrays {
      * @return la matrice transposée
      */
     public int[][] transpose(int[][] matrix) {
-        throw new UnsupportedOperationException();
-
+        int[][] transpMatrix = new int [matrix[0].length][matrix.length];
+        for(int i=0 ; i < matrix.length ; i++){
+            for(int j=0 ; j < matrix[0].length ; j++){
+                transpMatrix[j][i] = matrix[i][j];
+            }
+        }
+        return transpMatrix;
     }
     
     /**
@@ -54,8 +76,11 @@ public class Exercise11TwoDimensionalArrays {
      * @return un tableau contenant les éléments de la diagonale
      */
     public int[] getDiagonal(int[][] matrix) {
-        throw new UnsupportedOperationException();
-
+        int[] diagonale = new int[matrix.length];
+        for(int i = 0 ; i < matrix.length ; i++){
+           diagonale[i] = matrix[i][i];
+        }
+        return diagonale;
     }
     
 }
