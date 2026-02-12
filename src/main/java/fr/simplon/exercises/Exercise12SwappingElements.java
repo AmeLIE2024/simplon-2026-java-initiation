@@ -110,18 +110,18 @@ public class Exercise12SwappingElements {
      * @return le tableau après une passe
      */
     public int[] bubblePass(int[] array) {
-        int[] result = array.clone();
+        
         int i = 0;
-        while (i < result.length - 1){
-            if(result[i] > result[i + 1]){
-                swap(result, i, i + 1);
+        while (i < array.length - 1){
+            if(array[i] > array[i + 1]){
+                swap(array, i, i + 1);
                 i+=2;
             }else{
                 i++;
             }
         }
        
-        return result;
+        return array;
     }
     
     /**
